@@ -24,10 +24,22 @@ function renderTarefas(){
     for (tarefa of tarefas){
         var li = document.createElement('li');
         var texto = document.createTextNode(tarefa);
+        var trashImg = document.createElement('img');
+        trashImg.setAttribute('src', 'src/trash.svg')
+        trashImg.setAttribute('height', '15')
+
+        pos = tarefas.indexOf(tarefa);
+        trashImg.setAttribute('onclick', 'removeTarefa(' + pos + ')')
 
         li.appendChild(texto);
+        li.appendChild(trashImg);
         elementoLista.appendChild(li);
     }
 }
 
 renderTarefas();
+
+function removeTarefa(pos){
+    tarefas.splice(pos,1);
+    renderTarefas();
+}
