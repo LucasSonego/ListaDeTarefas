@@ -32,6 +32,7 @@ function renderTarefas(){
 
         li.appendChild(texto);
         li.appendChild(trashImg);
+        li.setAttribute('class', 'tarefa');
         elementoLista.appendChild(li);
     }
 }
