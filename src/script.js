@@ -1,5 +1,4 @@
 var elementoInput = document.getElementById('input')
-var elementoBotao = document.getElementById('botao')
 var elementoLista = document.getElementById('lista')
 
 var tarefas = JSON.parse(localStorage.getItem('tarefasStorage')) || [
@@ -15,8 +14,6 @@ function adicionarTarefa(){
         salvarTarefas();
     }  
 }
-
-elementoBotao.onclick = adicionarTarefa;
 
 function renderTarefas(){
     elementoLista.innerHTML = '';
@@ -48,3 +45,10 @@ function removeTarefa(pos){
 function salvarTarefas(){
     localStorage.setItem('tarefasStorage', JSON.stringify(tarefas));
 }
+
+elementoInput.addEventListener('keypress', function(event){
+    if (event.keyCode === 13){
+        event.preventDefault();
+        adicionarTarefa();
+    }
+});
