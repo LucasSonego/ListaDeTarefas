@@ -2,10 +2,8 @@ var elementoInput = document.getElementById('input')
 var elementoBotao = document.getElementById('botao')
 var elementoLista = document.getElementById('lista')
 
-var tarefas = [
-    'Tarefa 1',
-    'Tarefa 2',
-    'Tarefa 3'
+var tarefas = JSON.parse(localStorage.getItem('tarefasStorage')) || [
+    'Exemplo de tarefa'
 ]
 
 function adicionarTarefa(){
@@ -14,6 +12,7 @@ function adicionarTarefa(){
         elementoInput.value = '';
         tarefas.push(tarefa);
         renderTarefas();
+        salvarTarefas();
     }  
 }
 
@@ -42,4 +41,9 @@ renderTarefas();
 function removeTarefa(pos){
     tarefas.splice(pos,1);
     renderTarefas();
+    salvarTarefas();
+}
+
+function salvarTarefas(){
+    localStorage.setItem('tarefasStorage', JSON.stringify(tarefas));
 }
