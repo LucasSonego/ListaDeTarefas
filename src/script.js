@@ -25,7 +25,7 @@ function renderTarefas(){
         var texto = document.createTextNode(tarefa);
         var trashImg = document.createElement('img');
         trashImg.setAttribute('src', 'src/trash.svg')
-        trashImg.setAttribute('height', '15')
+        trashImg.setAttribute('height', '18')
 
         pos = tarefas.indexOf(tarefa);
         trashImg.setAttribute('onclick', 'removeTarefa(' + pos + ')')
