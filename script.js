@@ -13,8 +13,21 @@ function adicionarTarefa(){
         var tarefa = elementoInput.value;
         elementoInput.value = '';
         tarefas.push(tarefa);
-        console.log(tarefas);
+        renderTarefas();
     }  
 }
 
 elementoBotao.onclick = adicionarTarefa;
+
+function renderTarefas(){
+    elementoLista.innerHTML = '';
+    for (tarefa of tarefas){
+        var li = document.createElement('li');
+        var texto = document.createTextNode(tarefa);
+
+        li.appendChild(texto);
+        elementoLista.appendChild(li);
+    }
+}
+
+renderTarefas();
