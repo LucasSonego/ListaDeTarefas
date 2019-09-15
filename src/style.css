@@ -24,8 +24,7 @@ body{
     background: none;
     padding: 10px;
     outline: none;
-    font-size: 20px;
-    
+    font-size: 20px;  
 }
 
 h3{
@@ -39,7 +38,7 @@ h3{
 .tarefa{
     width: 100%;
     background-color: rgba(149, 165, 166, 0.3);
-    padding: 20px;
+    padding: 18px;
     margin: 6px 0;
     overflow: hidden;
 }
@@ -48,6 +47,7 @@ h3{
     float: right;
     margin-left: 20px;
     cursor: pointer;
+    height: 18px;
 }
 
 .tarefa img:hover{
@@ -55,7 +55,41 @@ h3{
     transform: scale(1.2);
 }
 
-hr { display: block; height: 1px;
-    border: 0; border-top: 2px solid black;
-    margin: 1em 0; padding: 0; 
+hr { 
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 2px solid black;
+    margin: 1em 0; 
+    padding: 0; 
+}
+
+@media only screen and (max-device-width: 768px) {
+
+    .app{
+        margin: 20px;
+        margin-top: 40px;
+        max-width: none; 
+    }
+
+    .input{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .tarefa{
+        padding: 25px;
+        font-size: 32px;
+        border-radius: 6px;
+    }
+
+    .tarefa img{
+        height: 35px;
+    }
+
+    h3{
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
 }
